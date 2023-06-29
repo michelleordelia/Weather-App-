@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1D1F"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Location"
+        android:textColor="#F3F3F3"
+        android:textSize="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="41dp"
+        android:layout_marginLeft="18dp"/>
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="#F3F3F3"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@id/textLocation"
+        app:layout_constraintTop_toBottomOf="@id/textLocation"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:id="@+id/textTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="28°C"
+        android:textColor="#F3F3F3"
+        android:textSize="64dp"
+        app:layout_constraintStart_toStartOf="@id/textLocation"
+        app:layout_constraintTop_toBottomOf="@id/textDate"
+        android:layout_marginTop="24dp" />
+
+    <ImageView
+        android:id="@+id/weatherIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textTemperature"
+        app:layout_constraintBottom_toBottomOf="@id/textTemperature"
+        android:layout_marginEnd="18dp" />
+
+    <TextView
+        android:id="@+id/textWeatherType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Haze"
+        android:textColor="#F3F3F3"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="@id/textLocation"
+        app:layout_constraintTop_toBottomOf="@id/textTemperature"
+        android:layout_marginTop="-15dp"/>
+
+    <!-- Card for wind, humidity, and rain details -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detailCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textWeatherType"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="28dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#202329">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textWind"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Wind: 10 m/s"
+                android:textColor="#F3F3F3"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textHumidity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Humidity: 80%"
+                android:textColor="#F3F3F3"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textRain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rainfall: 10mm"
+                android:textColor="#F3F3F3"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- New card for city temperature information -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cityCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#202329">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- New York -->
+            <TableRow
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="New York"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="26°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Feels like: 28°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <!-- Singapore -->
+            <TableRow
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Singapore"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="30°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Feels like: 32°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <!-- Mumbai -->
+            <TableRow
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mumbai"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="26°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Feels like: 28°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <!-- Delhi -->
+            <TableRow
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Delhi"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="26°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Feels like: 28°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <!-- Sydney -->
+            <TableRow
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Sydney"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="26°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Feels like: 28°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <!-- Melbourne -->
+            <TableRow
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Melbourne"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="26°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Feels like: 28°C"
+                    android:textColor="#F3F3F3"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+            </TableRow>
+        </TableLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Remaining code -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
